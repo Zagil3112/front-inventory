@@ -12,6 +12,8 @@ export class CategoryService {
 
   constructor(private http: HttpClient) { }
 
+  
+
   getCategories(){
     // alt +96 : backtick ``
     const endpoint = `${base_url}/categories`;
@@ -19,6 +21,15 @@ export class CategoryService {
     return this.http.get(endpoint);
     //return this.http.get(pki_endpoint);
 
+  }
+
+  /**
+   * Save categories
+   */
+
+  saveCategorie(body: any) {
+    const endpoint = `${base_url}/categories`;
+    return this.http.post(endpoint, body);
   }
 
 }
